@@ -1,0 +1,20 @@
+[project]
+name = "wolfram-automaton"
+version = "1.0.0"
+description = "Generate and visualize Wolfram elementary cellular automata with 2D and interactive 3D visualization"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.19.0",
+    "matplotlib>=3.3.0",
+    "plotly>=5.0.0",
+    "kaleido>=0.2.1",
+]
+
+[project.scripts]
+wolfram = "wolfram_automaton:main"
+wolfram-3d = "wolfram_3d:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

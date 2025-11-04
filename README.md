@@ -42,13 +42,22 @@ There are 256 possible rules (numbered 0-255), each producing unique patterns. S
 
 ## Installation
 
-1. Clone this repository:
+This project uses [uv](https://github.com/astral-sh/uv) for fast Python package management and execution.
+
+1. Install uv (if not already installed):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+2. Clone this repository:
 ```bash
 git clone <repository-url>
 cd Wolfram-Automaton
 ```
 
-2. Install dependencies:
+3. Dependencies will be automatically installed when you run the scripts with `uv run`!
+
+Alternatively, if you prefer traditional pip:
 ```bash
 pip install -r requirements.txt
 ```
@@ -61,33 +70,33 @@ pip install -r requirements.txt
 
 Generate a specific rule (e.g., Rule 30):
 ```bash
-python wolfram_automaton.py -r 30
+uv run wolfram_automaton.py -r 30
 ```
 
 ### Customize Width and Generations
 
 ```bash
-python wolfram_automaton.py -r 110 -w 201 -g 150
+uv run wolfram_automaton.py -r 110 -w 201 -g 150
 ```
 
 ### Different Starting Conditions
 
 Random starting condition:
 ```bash
-python wolfram_automaton.py -r 90 -s random
+uv run wolfram_automaton.py -r 90 -s random
 ```
 
 ### Save to File
 
 ```bash
-python wolfram_automaton.py -r 30 -o rule_30.png
+uv run wolfram_automaton.py -r 30 -o rule_30.png
 ```
 
 ### Generate All Rules
 
 Generate all 256 rules and save them to a directory:
 ```bash
-python wolfram_automaton.py --all -w 101 -g 50 -o output
+uv run wolfram_automaton.py --all -w 101 -g 50 -o output
 ```
 
 #### Command Line Options
@@ -110,7 +119,7 @@ The 3D visualization module provides interactive exploration of cellular automat
 
 Generate an interactive 3D visualization:
 ```bash
-python wolfram_3d.py -r 30 --mode voxels
+uv run wolfram_3d.py -r 30 --mode voxels
 ```
 
 This will open an interactive 3D plot in your browser where you can:
@@ -123,51 +132,51 @@ This will open an interactive 3D plot in your browser where you can:
 
 **Voxel Mode** - 3D scatter plot with interactive controls:
 ```bash
-python wolfram_3d.py -r 30 --mode voxels -d 40
+uv run wolfram_3d.py -r 30 --mode voxels -d 40
 ```
 
 **Layer Slices** - View multiple 2D slices simultaneously:
 ```bash
-python wolfram_3d.py -r 110 --mode slices
+uv run wolfram_3d.py -r 110 --mode slices
 ```
 
 **Animated Layers** - Transition through layers with animation:
 ```bash
-python wolfram_3d.py -r 90 --mode animation
+uv run wolfram_3d.py -r 90 --mode animation
 ```
 
 **Surface Plot** - 3D surface visualization:
 ```bash
-python wolfram_3d.py -r 30 --mode surface --layer 20
+uv run wolfram_3d.py -r 30 --mode surface --layer 20
 ```
 
 **Volumetric Rendering** - Advanced isosurface rendering:
 ```bash
-python wolfram_3d.py -r 30 --mode volume --opacity 0.2
+uv run wolfram_3d.py -r 30 --mode volume --opacity 0.2
 ```
 
 #### 3D Generation Modes
 
 **Multi-Run Mode** - Stack multiple independent runs:
 ```bash
-python wolfram_3d.py -r 30 --volume-mode multi_run -d 50
+uv run wolfram_3d.py -r 30 --volume-mode multi_run -d 50
 ```
 
 **Multi-Rule Mode** - Different rules across layers:
 ```bash
-python wolfram_3d.py -r 90 --volume-mode multi_rule -d 30
+uv run wolfram_3d.py -r 90 --volume-mode multi_rule -d 30
 ```
 
 **Evolution Mode** - Continuous evolution through depth:
 ```bash
-python wolfram_3d.py -r 110 --volume-mode evolution -d 40
+uv run wolfram_3d.py -r 110 --volume-mode evolution -d 40
 ```
 
 #### Save 3D Visualizations
 
 Save to interactive HTML file:
 ```bash
-python wolfram_3d.py -r 30 --mode voxels -o rule_30_3d.html
+uv run wolfram_3d.py -r 30 --mode voxels -o rule_30_3d.html
 ```
 
 The HTML file can be opened in any web browser with full interactivity preserved!
@@ -270,12 +279,12 @@ Run the included example scripts to see what's possible:
 
 **2D Examples:**
 ```bash
-python examples.py
+uv run examples.py
 ```
 
 **3D Examples:**
 ```bash
-python examples_3d.py
+uv run examples_3d.py
 ```
 
 ### Famous Rules to Try
@@ -283,31 +292,31 @@ python examples_3d.py
 **2D Visualizations:**
 ```bash
 # Rule 30 - Chaotic pattern
-python wolfram_automaton.py -r 30
+uv run wolfram_automaton.py -r 30
 
 # Rule 110 - Turing complete
-python wolfram_automaton.py -r 110
+uv run wolfram_automaton.py -r 110
 
 # Rule 90 - Sierpinski triangle
-python wolfram_automaton.py -r 90
+uv run wolfram_automaton.py -r 90
 
 # Rule 184 - Traffic flow model
-python wolfram_automaton.py -r 184
+uv run wolfram_automaton.py -r 184
 
 # Rule 54 - Complex but regular pattern
-python wolfram_automaton.py -r 54
+uv run wolfram_automaton.py -r 54
 ```
 
 **3D Visualizations:**
 ```bash
 # Rule 30 in 3D with voxels
-python wolfram_3d.py -r 30 --mode voxels
+uv run wolfram_3d.py -r 30 --mode voxels
 
 # Rule 110 with layer animation
-python wolfram_3d.py -r 110 --mode animation
+uv run wolfram_3d.py -r 110 --mode animation
 
 # Rule 90 with evolution mode
-python wolfram_3d.py -r 90 --volume-mode evolution --mode voxels
+uv run wolfram_3d.py -r 90 --volume-mode evolution --mode voxels
 ```
 
 ### Wider Patterns
@@ -315,10 +324,10 @@ python wolfram_3d.py -r 90 --volume-mode evolution --mode voxels
 For more detailed visualization:
 ```bash
 # 2D
-python wolfram_automaton.py -r 30 -w 301 -g 200
+uv run wolfram_automaton.py -r 30 -w 301 -g 200
 
 # 3D
-python wolfram_3d.py -r 30 -w 301 -g 150 -d 50 --mode voxels
+uv run wolfram_3d.py -r 30 -w 301 -g 150 -d 50 --mode voxels
 ```
 
 ## Output

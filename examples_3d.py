@@ -7,6 +7,8 @@ Demonstrates various 3D visualization capabilities including:
 - Layer-by-layer viewing
 - Animated transitions
 - Multiple visualization modes
+
+Run with: uv run examples_3d.py
 """
 
 from wolfram_3d import WolframAutomaton3D

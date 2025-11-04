@@ -7,6 +7,8 @@ Provides interactive 3D visualizations of cellular automata with:
 - Full 3D structure visualization
 - Interactive pan, zoom, and rotate controls
 - Multiple visualization styles (voxels, surface, scatter)
+
+Run with: uv run wolfram_3d.py -r 30 --mode voxels
 """
 
 import numpy as np

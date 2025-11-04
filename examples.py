@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 Example usage of the Wolfram Automaton Generator
+
+Run with: uv run examples.py
 """
 
 from wolfram_automaton import WolframAutomaton

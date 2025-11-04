@@ -4,6 +4,8 @@ Wolfram Automaton Generator
 
 A simple application to generate and visualize elementary cellular automata
 (Wolfram automaton) with different rules, widths, and starting conditions.
+
+Run with: uv run wolfram_automaton.py -r 30
 """
 
 import numpy as np
